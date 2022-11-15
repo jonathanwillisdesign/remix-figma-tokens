@@ -1,6 +1,12 @@
+import { styled } from "stitches.config";
+
+const Box = styled('div', {
+  backgroundColor: "$theme-accent-subtle",
+})
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <Box>
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
@@ -27,6 +33,6 @@ export default function Index() {
           </a>
         </li>
       </ul>
-    </div>
+    </Box>
   );
 }
