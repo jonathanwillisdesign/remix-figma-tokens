@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build-transform-light": "npx token-transformer tokens.json tokens/light.json global,light,theme global",
+    "build-transform-dark": "npx token-transformer tokens.json tokens/dark.json global,dark,theme global",
+    "build-transform": "npm run build-transform-light && npm run build-transform-dark",
+    "build-sd": "node build.js",
+    "prebuild": "npm run build-transform && npm run build-sd",
+    "build": "remix build",
+    "dev": "remix dev"
+  },
+  "dependencies": {
+    "@remix-run/node": "^1.7.5",
+    "@remix-run/react": "^1.7.5",
+    "@remix-run/vercel": "^1.7.5",
+    "@stitches/react": "^1.2.8",
+    "@vercel/node": "^2.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "style-dictionary": "^3.7.1",
+    "token-transformer": "^0.0.27"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.7.5",
+    "@remix-run/eslint-config": "^1.7.5",
+    "@remix-run/serve": "^1.7.5",
+    "eslint": "^8.27.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
