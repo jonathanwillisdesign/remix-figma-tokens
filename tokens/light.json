@@ -34,11 +34,11 @@
     },
     "accent": {
       "default": {
-        "value": "#3d53f5",
+        "value": "#9c0f2e",
         "type": "color"
       },
       "subtle": {
-        "value": "#b1bafb",
+        "value": "#f9d0d9",
         "type": "color"
       }
     }
