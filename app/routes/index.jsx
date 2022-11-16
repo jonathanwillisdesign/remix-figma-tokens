@@ -2,27 +2,32 @@ import { styled } from "stitches.config";
 import { motion } from 'framer-motion'
 import { useLocation } from "@remix-run/react";
 
-const Box = styled('div', {
+const Box = styled( motion.div , 'div', {
   backgroundColor: "$theme-accent-default",
+  width: '100px',
+  height: '200px'
 })
 
 export default function Index() {
   return (
-          <motion.div>
+          <motion.div layout>
             <motion.h1
-              initial={{ y: 200 }}
-              animate={{y :0 }}
-              exit={{ y: -200 }}
-              transition={{duration: 0.5}}
+              initial={{ opacity: 0, y: 100 }}
+              animate={{opacity: 1, y :0 }}
+              exit={{ opacity: 0, y: -110 }}
+              transition={{duration: 0.5, delay: 0.5}}
             >Home Page</motion.h1>
             <motion.p
-              initial={{ y: 100 }}
-              animate={{y:0 }}
-              exit={{ y:-100 }}
-              transition={{duration: 0.5,  delay: 0.2}}
+              initial={{ opacity: 0, y: 110 }}
+              animate={{opacity: 1, y:0 }}
+              exit={{ opacity: 0, y:-100 }}
+              transition={{duration: 0.5, delay: 0.7}}
             >
               Home Page Description text
             </motion.p>
+            <Box layoutId="box" transition={{duration: 1}}
+              // exit={{ width: 300, height: 400, backgroundColor: 'var(--colors-theme-accent-subtle)'}}
+              />
           </motion.div>
           
   )

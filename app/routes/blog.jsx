@@ -8,7 +8,7 @@ const Box = styled('div', {
 
 export default function Blog() {
     return (
-        <motion.div>
+        <motion.div layout>
         <motion.h1
           initial={{ y: 200 }}
           animate={{y :0 }}

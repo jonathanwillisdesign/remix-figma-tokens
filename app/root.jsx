@@ -27,6 +27,8 @@ export function links() {
 
 export default function App() {
   const outlet = useOutlet();
+
+  console.log(useLocation().pathname)
   return (
     <html lang="en">
       <head>
@@ -39,13 +41,13 @@ export default function App() {
           <NavLink to="/about">About</NavLink>
           <NavLink to="/blog">Blogs</NavLink>
         </nav>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode='popLayout'>
           <motion.main
             key={useLocation().pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // exit={{ opacity: 0 }}
+            // transition={{ duration: 1 }}
           >
             {outlet}
           </motion.main>
