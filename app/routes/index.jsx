@@ -1,38 +1,29 @@
 import { styled } from "stitches.config";
+import { motion } from 'framer-motion'
+import { useLocation } from "@remix-run/react";
 
 const Box = styled('div', {
-  backgroundColor: "$theme-accent-subtle",
+  backgroundColor: "$theme-accent-default",
 })
 
 export default function Index() {
   return (
-    <Box>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </Box>
-  );
+          <motion.div>
+            <motion.h1
+              initial={{ y: 200 }}
+              animate={{y :0 }}
+              exit={{ y: -200 }}
+              transition={{duration: 0.5}}
+            >Home Page</motion.h1>
+            <motion.p
+              initial={{ y: 100 }}
+              animate={{y:0 }}
+              exit={{ y:-100 }}
+              transition={{duration: 0.5,  delay: 0.2}}
+            >
+              Home Page Description text
+            </motion.p>
+          </motion.div>
+          
+  )
 }
